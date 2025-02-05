@@ -67,12 +67,14 @@ class GameLoop:
         self.powerup_manager.draw(self.screen)
 
         # Draw HUD (height and fuel).
-        height_text = self.font.render(f"Current Height: {int(self.current_height)}", True, (0, 0, 0))
-        best_text = self.font.render(f"Highest Height: {int(self.highest_height)}", True, (0, 0, 0))
+        height_text = self.font.render(f"Current Height: {int(self.current_height/10)}m", True, (0, 0, 0))
+        best_text = self.font.render(f"Highest Height: {int(self.highest_height/10)}m", True, (0, 0, 0))
         fuel_text = self.font.render(f"Fuel: {int(self.balloon.fuel)}", True, (0, 0, 0))
+        shield_text = self.font.render(f"Shield: {int(self.balloon.shield_timer/1000)}s", True, (0, 0, 0))
         self.screen.blit(height_text, (10, 10))
         self.screen.blit(best_text, (10, 30))
         self.screen.blit(fuel_text, (10, 50))
+        self.screen.blit(shield_text, (10, 70))
 
         pygame.display.flip()
 
