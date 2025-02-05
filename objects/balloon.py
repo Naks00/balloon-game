@@ -2,16 +2,20 @@ import pygame
 from core.entity import Entity
 from core.settings import GameSettings
 
+
+balloon_img = pygame.image.load("./assets/balloon.png")
+balloon_shield_img = pygame.image.load("./assets/balloon-shield.png")
+
 # ---------------------------
 # Balloon (Player) Class
 # ---------------------------
 class Balloon(Entity):
     def __init__(self):
         # Place the balloon roughly at the center-bottom of the screen.
-        width, height = 50, 80
+        width, height = 100, 160
         x = GameSettings.SCREEN_WIDTH // 2 - width // 2
         # Vertical position is fixed; the background scrolls instead.
-        y = GameSettings.SCREEN_HEIGHT - height - 20  
+        y = GameSettings.SCREEN_HEIGHT - height - 100  
         super().__init__(x, y, width, height)
         self.fuel = GameSettings.FUEL_MAX_FILL  # initial fuel
         self.shield_active = False
@@ -55,6 +59,10 @@ class Balloon(Entity):
 
     def draw(self, surface):
         # Draw the balloon; if shielded, draw an outline to indicate it.
-        pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
+        #pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
+        surface.blit(balloon_img, (self.x, self.y))
+
         if self.shield_active:
-            pygame.draw.rect(surface, (0, 0, 255), (self.x-3, self.y-3, self.width+6, self.height+6), 3)
+            #pygame.draw.rect(surface, (0, 0, 255), (self.x-3, self.y-3, self.width+6, self.height+6), 3)
+            surface.blit(balloon_shield_img, (self.x-2, self.y-2))
+

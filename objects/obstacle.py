@@ -3,14 +3,17 @@ from core.entity import Entity
 from core.settings import GameSettings
 
 
+bird_img = pygame.image.load("./assets/bird.png")
+cloud_img = pygame.image.load("./assets/cloud.png")
+
 # ---------------------------
 # Obstacle Base Class and Subclasses
 # ---------------------------
 class Obstacle(Entity):
-    def __init__(self, x, y, speed, width=50, height=50, color=(0, 255, 0)):
+    def __init__(self, x, y, image, speed, width, height):
         super().__init__(x, y, width, height)
         self.speed = speed  # horizontal speed component
-        self.color = color
+        self.image = image
 
     def update(self, dt):
         # Horizontal movement.
@@ -27,17 +30,18 @@ class Obstacle(Entity):
             self.speed = -abs(self.speed)
 
     def draw(self, surface):
-        pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
+        #pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
+        surface.blit(self.image, (self.x, self.y))
 
 
 
 class Bird(Obstacle):
     def __init__(self, x, y):
         # Birds have a faster horizontal speed.
-        super().__init__(x, y, GameSettings.OBSTACLE_SPEED_BIRD, color=(0, 255, 0))
+        super().__init__(x, y, bird_img, GameSettings.OBSTACLE_SPEED_BIRD, width=60, height=60)
 
 
 class Cloud(Obstacle):
     def __init__(self, x, y):
-        super().__init__(x, y, GameSettings.OBSTACLE_SPEED_CLOUD, color=(200, 200, 200))
+        super().__init__(x, y, cloud_img, GameSettings.OBSTACLE_SPEED_CLOUD, width=120, height=80)
 
