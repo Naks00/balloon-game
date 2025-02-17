@@ -23,13 +23,14 @@ class GameLoop:
         self.font = pygame.font.SysFont(None, 24)
         pygame.display.set_caption("Balloon Game")
 
+        
         self.balloon = Balloon()
         self.obstacle_manager = ObstacleManager()
         self.powerup_manager = PowerUpManager()
         self.collision_manager = CollisionManager(self.balloon, self.obstacle_manager, self.powerup_manager)
 
         self.running = True
-        self.current_height = 0  # track the height based on background scroll
+        self.current_height = 0
         self.highest_height = 0
 
     def handle_input(self, dt):

@@ -1,7 +1,7 @@
 import pygame
 
 # ---------------------------
-# Base Classes
+# Entity Base Class
 # ---------------------------
 class Entity:
     def __init__(self, x, y, width, height):

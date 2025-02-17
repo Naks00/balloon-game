@@ -1,7 +1,7 @@
 
-# ---------------------------
+# ------------------------------
 # Global Settings and Constants
-# ---------------------------
+# ------------------------------
 
 # Game settings: Speeds, spawn rates, etc.
 class GameSettings:
@@ -10,7 +10,7 @@ class GameSettings:
     SCREEN_HEIGHT = 800
     BACKGROUND_SPEED = 150       # pixels per second (scroll speed downward)
     BALLOON_HORIZONTAL_SPEED = 300  # pixels per second horizontally
-    OBSTACLE_SPEED_BIRD = 400      # additional horizontal movement speed for birds
+    OBSTACLE_SPEED_BIRD = 300      # additional horizontal movement speed for birds
     OBSTACLE_SPEED_CLOUD = 200      # additional horizontal movement speed for clouds
     FUEL_CONSUMPTION_RATE = 1     # fuel units per second
     FUEL_MAX_FILL = 100
