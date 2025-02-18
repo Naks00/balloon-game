@@ -9,58 +9,6 @@ cloud_img = pygame.image.load("./assets/cloud.png")
 
 
 # ------------------------------------
-# Obstacle Manager - Factory Method
-# ------------------------------------
-class ObstacleManager:
-    """Factory class managing obstacle spawning and lifecycle using Factory Method pattern."""
-    def __init__(self):
-        self.obstacles = []
-        self.spawn_timer = 0
-
-    def update(self, dt):
-        """Update obstacle state including:
-        - Spawning new obstacles at intervals
-        - Updating existing obstacles
-        - Removing off-screen obstacles
-        
-        Args:
-            dt (float): Delta time in seconds
-        """
-        self.spawn_timer += dt * 1000  # convert dt to milliseconds
-        if self.spawn_timer >= GameSettings.OBSTACLE_SPAWN_INTERVAL:
-            self.spawn_timer = 0
-            self.spawn_obstacle()
-
-        for obstacle in self.obstacles:
-            obstacle.update(dt)
-
-        # Remove obstacles that have moved off the bottom of the screen.
-        self.obstacles = [o for o in self.obstacles if o.y <= GameSettings.SCREEN_HEIGHT]
-
-    def spawn_obstacle(self):
-        """Spawn a randomly chosen obstacle at a random x and y = -50"""
-
-        y = -50
-        x = random.randint(0, GameSettings.SCREEN_WIDTH - 50)
-
-        # Randomly select an obstacle type.
-        if random.choice([True, False]):
-            obstacle = Bird(x, y)
-        else:
-            obstacle = Cloud(x, y)
-        self.obstacles.append(obstacle)
-
-    def draw(self, surface):
-        """Draw entity on specified surface. To be overridden by subclasses.
-        
-        Args:
-            surface (pygame.Surface): Game display surface
-        """
-        for obstacle in self.obstacles:
-            obstacle.draw(surface)
-
-
-# ------------------------------------
 # Obstacle Base Class 
 # ------------------------------------
 class Obstacle(Entity):

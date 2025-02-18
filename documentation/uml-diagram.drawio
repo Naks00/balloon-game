@@ -1,0 +1,250 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.0.14">
+  <diagram name="Page-1" id="9f46799a-70d6-7492-0946-bef42562c5a5">
+    <mxGraphModel dx="1584" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-69" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=block;startFill=0;endArrow=none;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-7" target="Pq-hdSOUEB-_L8z7X2RZ-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="1320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="630" y="1310" />
+              <mxPoint x="555" y="1310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-70" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=block;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-7" target="Pq-hdSOUEB-_L8z7X2RZ-15">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="1290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="1290" />
+              <mxPoint x="470" y="1290" />
+              <mxPoint x="470" y="1640" />
+              <mxPoint x="810" y="1640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-71" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=block;startFill=0;endArrow=none;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-7" target="Pq-hdSOUEB-_L8z7X2RZ-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="569.8989898989898" y="1270" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="530" y="1270" />
+              <mxPoint x="440" y="1270" />
+              <mxPoint x="440" y="1680" />
+              <mxPoint x="720" y="1680" />
+              <mxPoint x="720" y="1870" />
+              <mxPoint x="1000" y="1870" />
+              <mxPoint x="1000" y="1660" />
+              <mxPoint x="1170" y="1660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-7" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;Entity&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="1080" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-8" value="+ x: float&lt;div&gt;+ y: float&lt;/div&gt;&lt;div&gt;+ width: int&lt;/div&gt;&lt;div&gt;+ height: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-7">
+          <mxGeometry y="26" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-9" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-7">
+          <mxGeometry y="90" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-10" value="+ update(dt: float)&lt;div&gt;+ draw(surface: pygame.Sruface)&lt;/div&gt;&lt;div&gt;+ collides_with(other: Entity): bool&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-7">
+          <mxGeometry y="98" width="200" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-68" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=none;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-11" target="Pq-hdSOUEB-_L8z7X2RZ-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="900" y="1330.0000000000002" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="665" y="1360" />
+              <mxPoint x="790" y="1360" />
+              <mxPoint x="790" y="1333" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-11" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;Balloon&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1400" width="220" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-12" value="+ fuel: int&lt;div&gt;+ shield_active: bool&lt;/div&gt;&lt;div&gt;+ shield_timer: int&lt;/div&gt;&lt;div&gt;+ chrashed_flag: bool&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-11">
+          <mxGeometry y="26" width="220" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-13" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-11">
+          <mxGeometry y="90" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-14" value="+ update(dt: float)&lt;div&gt;+ move_left(dt: float)&lt;/div&gt;&lt;div&gt;+ move_right(dt: float)&lt;/div&gt;&lt;div&gt;+ apply_powerup(powerup: PowerUp)&lt;/div&gt;&lt;div&gt;+ crash()&lt;/div&gt;&lt;div&gt;+ has_crashed(): bool&lt;br&gt;&lt;div&gt;+ draw(surface: pygame.Sruface)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-11">
+          <mxGeometry y="98" width="220" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-15" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;Obstacle&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="1680" width="200" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-16" value="+ speed: int&lt;div&gt;+ image: pygame.Surface&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-15">
+          <mxGeometry y="26" width="200" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-15">
+          <mxGeometry y="80" width="200" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-22" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;PowerUp&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="1680" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-23" value="+ image: pygame.Surface" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-22">
+          <mxGeometry y="26" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-22">
+          <mxGeometry y="50" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-25" value="+ apply(balloon: Balloon)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-22">
+          <mxGeometry y="58" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-26" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;FuelPowerUp&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1800" width="170" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-26">
+          <mxGeometry y="26" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-29" value="+ apply(balloon: Balloon)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-26">
+          <mxGeometry y="34" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-30" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;ShieldPowerUp&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="1800" width="170" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-30">
+          <mxGeometry y="26" width="170" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-32" value="+ apply(balloon: Balloon)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-30">
+          <mxGeometry y="34" width="170" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-33" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;Bird&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="1800" width="80" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-34" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-33">
+          <mxGeometry y="26" width="80" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-36" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;Cloud&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1800" width="80" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-37" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-36">
+          <mxGeometry y="26" width="80" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-67" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-38" target="Pq-hdSOUEB-_L8z7X2RZ-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-38" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;ObstacleManager&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1480" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-39" value="&lt;div&gt;+ spawn_timer: int&lt;/div&gt;+ obstacles: List[Obstacle]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-38">
+          <mxGeometry y="26" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-40" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-38">
+          <mxGeometry y="60" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-41" value="&lt;div&gt;+ update(dt: float)&lt;/div&gt;+ spawn_obstacle()&lt;div&gt;+ draw(surface: pygame.Sruface)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-38">
+          <mxGeometry y="68" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-66" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-42" target="Pq-hdSOUEB-_L8z7X2RZ-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180.0625" y="1630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-42" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;PowerUpManager&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1480" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-43" value="&lt;div&gt;+ spawn_timer: int&lt;/div&gt;+ powerups: List[Obstacle]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-42">
+          <mxGeometry y="26" width="200" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-44" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-42">
+          <mxGeometry y="60" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-45" value="&lt;div&gt;+ update(dt: float)&lt;/div&gt;+ spawn_powerup()&lt;div&gt;+ draw(surface: pygame.Sruface)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-42">
+          <mxGeometry y="68" width="200" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-60" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;startFill=1;startArrow=classic;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-46" target="Pq-hdSOUEB-_L8z7X2RZ-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-46" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;CollisionManager&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1280" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-47" value="&lt;div&gt;+ balloon: Balloon&lt;/div&gt;+ obstacle_manager: ObstacleManager&lt;div&gt;+ powerup_manager: PowerUpManager&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-46">
+          <mxGeometry y="26" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-48" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-46">
+          <mxGeometry y="80" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-49" value="&lt;div&gt;+ check_collisions()&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-46">
+          <mxGeometry y="88" width="240" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-50" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;GameSettings&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="1200" width="240" height="228" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-51" value="&lt;div&gt;+ FPS: int&lt;/div&gt;&lt;div&gt;+ SCREEN_WIDTH: int&lt;/div&gt;&lt;div&gt;+ SCREEN_HEIGHT: int&lt;/div&gt;&lt;div&gt;+ BACKGROUND_SPEED: int&lt;/div&gt;&lt;div&gt;+ BALLOON_HORIZONTAL_SPEED: int&lt;/div&gt;&lt;div&gt;+ OBSTACLE_SPEED_BIRD: int&lt;/div&gt;&lt;div&gt;+ OBSTACLE_SPEED_CLOUD: int&lt;/div&gt;&lt;div&gt;+ FUEL_CONSUMPTION_RATE: int&lt;/div&gt;&lt;div&gt;+ FUEL_MAX_FILL: int&lt;/div&gt;&lt;div&gt;+ FUEL_POWER_UP: int&lt;/div&gt;&lt;div&gt;+ SHIELD_DURATION: int&lt;/div&gt;&lt;div&gt;+ OBSTACLE_SPAWN_INTERVAL: int&lt;/div&gt;&lt;div&gt;+ POWERUP_SPAWN_INTERVAL: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-50">
+          <mxGeometry y="26" width="240" height="194" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-52" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-50">
+          <mxGeometry y="220" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-72" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-57" target="Pq-hdSOUEB-_L8z7X2RZ-50">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100.042735042735" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-73" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-54" target="Pq-hdSOUEB-_L8z7X2RZ-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="1200" />
+              <mxPoint x="1230" y="1200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-74" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-54" target="Pq-hdSOUEB-_L8z7X2RZ-38">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="1200" />
+              <mxPoint x="850" y="1200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-54" value="&lt;span style=&quot;font-family: Verdana; text-wrap-mode: nowrap;&quot;&gt;GameLoop&lt;/span&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="920" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-55" value="&lt;div&gt;+ screen: pygame.Surface&lt;/div&gt;&lt;div&gt;+ balloon: Balloon&lt;/div&gt;+ obstacle_manager: ObstacleManager&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ powerup_manager: PowerUpManager&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ collision_manager: CollisionManager&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-54">
+          <mxGeometry y="26" width="240" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-56" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-54">
+          <mxGeometry y="110" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-57" value="&lt;div&gt;+ run()&lt;/div&gt;&lt;div&gt;+ handle_input(dt: float)&lt;/div&gt;&lt;div&gt;+ update&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(dt: float)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ render()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ game_over()&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Pq-hdSOUEB-_L8z7X2RZ-54">
+          <mxGeometry y="118" width="240" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-58" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-49" target="Pq-hdSOUEB-_L8z7X2RZ-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-59" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-49" target="Pq-hdSOUEB-_L8z7X2RZ-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-61" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.203;entryY=0.738;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-33" target="Pq-hdSOUEB-_L8z7X2RZ-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-62" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.801;entryY=0.857;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;endArrow=block;endFill=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-36" target="Pq-hdSOUEB-_L8z7X2RZ-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-63" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.201;entryY=1.032;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-26" target="Pq-hdSOUEB-_L8z7X2RZ-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-64" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.801;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-30" target="Pq-hdSOUEB-_L8z7X2RZ-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-75" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=0;" edge="1" parent="1" source="Pq-hdSOUEB-_L8z7X2RZ-57" target="Pq-hdSOUEB-_L8z7X2RZ-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="1080" />
+              <mxPoint x="760" y="1080" />
+              <mxPoint x="760" y="1340" />
+              <mxPoint x="610" y="1340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Pq-hdSOUEB-_L8z7X2RZ-76" value="Vertical Container" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="870" width="1150" height="1030" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

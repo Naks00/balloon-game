@@ -85,10 +85,12 @@ balloon-game/
 │   └── shield.png           
 ├── core/                  
 │   ├── entity.py          # Base Entity class
-│   ├── game_managers.py   # CollisionManager
+│   ├── game_managers.py   # ObstacleManager, PowerUpManager and CollisionManager
 │   └── settings.py        # GameSettings constants
 ├── documentation/
 |   ├── task.md            # University Course task
+|   ├── uml-diagram.png    # UML diagram screenshot
+|   ├── uml-diagram.drawio 
 |   └── screenshot.png     # Game screenshot for README.md
 ├── objects/               
 │   ├── balloon.py         # Player-controlled balloon
@@ -107,3 +109,7 @@ balloon-game/
 - **Delta Time:** Frame-rate independent movement using dt (time since last frame).
 - **Collision Detection:** AABB (Axis-Aligned Bounding Box) via Entity.collides_with().
 - **Scrolling Illusion:** Achieved by moving obstacles/power-ups downward while keeping the balloon fixed.
+
+## UML Diagram
+
+<img src="https://github.com/antoniosimuncic/balloon-game/blob/main/documentation/uml-diagram.png">

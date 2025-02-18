@@ -9,57 +9,6 @@ shield_img = pygame.image.load("./assets/shield.png")
 
 
 # ------------------------------------
-# Power Up Manager - Factory Method
-# ------------------------------------
-class PowerUpManager:
-    """Factory class managing power-up spawning and lifecycle using Factory Method pattern."""
-    def __init__(self):
-        self.powerups = []
-        self.spawn_timer = 0
-
-    def update(self, dt):
-        """Update power-up state including:
-        - Spawning new power-ups at intervals
-        - Updating existing power-ups
-        - Removing off-screen power-ups
-
-        Args:
-            dt (float): Delta time in seconds
-        """
-        self.spawn_timer += dt * 1000  # milliseconds
-        if self.spawn_timer >= GameSettings.POWERUP_SPAWN_INTERVAL:
-            self.spawn_timer = 0
-            self.spawn_powerup()
-
-        for powerup in self.powerups:
-            powerup.update(dt)
-
-        # Remove power-ups that have moved off the bottom of the screen.
-        self.powerups = [p for p in self.powerups if p.y <= GameSettings.SCREEN_HEIGHT]
-
-    def spawn_powerup(self):
-        """Spawn a randomly chosen obstacle at a random x and y = -50"""
-
-        x = random.randint(50, GameSettings.SCREEN_WIDTH - 50)
-        y = -50  # spawn just above the screen
-        if random.choice([True, False]):
-            powerup = FuelPowerUp(x, y)
-        else:
-            powerup = ShieldPowerUp(x, y)
-        self.powerups.append(powerup)
-
-    def draw(self, surface):
-        """Draw entity on specified surface. To be overridden by subclasses.
-        
-        Args:
-            surface (pygame.Surface): Game display surface
-        """
-        for powerup in self.powerups:
-            powerup.draw(surface)
-
-
-
-# ------------------------------------
 # Power Up Base Class
 # ------------------------------------
 class PowerUp(Entity):

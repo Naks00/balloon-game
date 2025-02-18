@@ -11,7 +11,6 @@ from objects.power_up import *
 from core.game_managers import *
 
 
-
 # ---------------------------
 # Main Game Class
 # ---------------------------
