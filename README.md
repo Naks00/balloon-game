@@ -2,7 +2,7 @@
 VERN' University  
 Internet of Things Department, Code Ogranization class  
 Professor: Mislav Đomlija, univ. bacc. ing. comp.  
-Student: Ante Nakić, Antonio Šimunčić  
+Students: Ante Nakić, Antonio Šimunčić  
 Zagreb, Croatia  
 February, 2025  
 
@@ -11,9 +11,9 @@ February, 2025
 # 🎈 Hot Air Balloon Game 
 
 A 2D Pygame-based survival game where you control a hot air balloon, avoid obstacles, collect power-ups, and climb as high as possible!    
+The game was created for a university project with OOP and SOLID principles in mind, the task at hand: [task.md](https://github.com/antoniosimuncic/balloon-game/blob/main/documentation/task.md)  
 
-
-<img src="https://github.com/antoniosimuncic/balloon-game/blob/main/documentation/screenshot.png">
+<img src="https://github.com/antoniosimuncic/balloon-game/blob/main/documentation/screenshot.png">  
 
 ---
 
