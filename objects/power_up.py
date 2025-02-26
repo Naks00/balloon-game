@@ -1,12 +1,11 @@
 import pygame
-import random
+import os  # Ensure os is imported
 from core.entity import Entity
 from core.settings import GameSettings
 
-
-fuel_img = pygame.image.load("./assets/fuel.png")
-shield_img = pygame.image.load("./assets/shield.png")
-
+fuel_img = pygame.image.load(os.path.join("assets", "fuel.png"))
+shield_img = pygame.image.load(os.path.join("assets", "shield.png"))
+slowdown_img = pygame.image.load(os.path.join("assets", "slowdown.png"))
 
 # ------------------------------------
 # Power Up Base Class
@@ -31,7 +30,6 @@ class PowerUp(Entity):
         Args:
             surface (pygame.Surface): Game display surface
         """
-        # pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
         surface.blit(self.image, (self.x, self.y))
 
     def apply(self, balloon):
@@ -41,8 +39,6 @@ class PowerUp(Entity):
             balloon (Balloon): Balloon to apply effect to
         """
         raise NotImplementedError("Subclasses must implement apply method.")
-
-
 
 # ------------------------------------
 # Power Up Subclasses
@@ -77,3 +73,26 @@ class FuelPowerUp(PowerUp):
         if balloon.fuel > GameSettings.FUEL_MAX_FILL:
             balloon.fuel = GameSettings.FUEL_MAX_FILL
         print("Fuel increased!")
+
+class SlowdownPowerUp(PowerUp):
+    """Power-up that slows down obstacles."""
+    def __init__(self, x, y):
+        super().__init__(x, y, slowdown_img)
+
+    def apply(self, balloon):
+        """Slow down obstacles.
+        
+        Args:
+            balloon (Balloon): Balloon to apply effect to
+        """
+        balloon.slowdown_active = True
+        balloon.slowdown_timer = GameSettings.SLOWDOWN_DURATION
+        GameSettings.SLOWDOWN_ACTIVE = True  # Set the global slowdown flag
+        for obstacle in balloon.obstacle_manager.obstacles:
+            if hasattr(obstacle, 'speed_x'):
+                obstacle.speed_x /= 2  # Halve the horizontal speed of each obstacle
+            if hasattr(obstacle, 'speed_y'):
+                obstacle.speed_y /= 2  # Halve the vertical speed of each obstacle
+            if hasattr(obstacle, 'speed'):
+                obstacle.speed /= 2  # Halve the speed of each obstacle
+        print("Obstacles slowed down for {} ms!".format(GameSettings.SLOWDOWN_DURATION))

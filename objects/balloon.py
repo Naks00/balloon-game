@@ -1,53 +1,60 @@
 import pygame
+import os  # Ensure os is imported
 from core.entity import Entity
 from core.settings import GameSettings
 
+balloon_img = pygame.image.load(os.path.join("assets", "balloon.png"))
+balloon_shield_img = pygame.image.load(os.path.join("assets", "balloon-shield.png"))
 
-balloon_img = pygame.image.load("./assets/balloon.png")
-balloon_shield_img = pygame.image.load("./assets/balloon-shield.png")
-
-# ---------------------------
-# Balloon (Player) Class
-# ---------------------------
 class Balloon(Entity):
     """Player-controlled hot air balloon entity with fuel management and power-up capabilities."""
     def __init__(self):
         """Initialize balloon at center-bottom position with full fuel and default state."""
         width, height = 100, 160
-        # Place the balloon roughly at the center-bottom of the screen.
         x = GameSettings.SCREEN_WIDTH // 2 - width // 2
-        # Vertical position is fixed; the background scrolls instead.
         y = GameSettings.SCREEN_HEIGHT - height - 100
         super().__init__(x, y, width, height)
         self.fuel = GameSettings.FUEL_MAX_FILL
         self.shield_active = False
         self.shield_timer = 0
+        self.slowdown_active = False
+        self.slowdown_timer = 0
         self.crashed_flag = False
 
     def update(self, dt):
         """Update balloon state including:
         - Fuel consumption
         - Shield timer
+        - Slowdown timer
         - Horizontal boundaries
         - Crash condition
         
         Args:
             dt (float): Delta time in seconds
         """
-
-        # Balloon stays vertically stationary.
         if self.fuel > 0:
             self.fuel -= GameSettings.FUEL_CONSUMPTION_RATE * dt
         else:
             self.crash()
 
-        # Update shield timer if active.
         if self.shield_active:
             self.shield_timer -= dt * 1000
             if self.shield_timer <= 0:
                 self.shield_active = False
 
-        # Keep the balloon within horizontal screen bounds.
+        if self.slowdown_active:
+            self.slowdown_timer -= dt * 1000
+            if self.slowdown_timer <= 0:
+                self.slowdown_active = False
+                GameSettings.SLOWDOWN_ACTIVE = False  # Reset the global slowdown flag
+                for obstacle in self.obstacle_manager.obstacles:
+                    if hasattr(obstacle, 'speed_x'):
+                        obstacle.speed_x *= 2  # Reset the horizontal speed of each obstacle
+                    if hasattr(obstacle, 'speed_y'):
+                        obstacle.speed_y *= 2  # Reset the vertical speed of each obstacle
+                    if hasattr(obstacle, 'speed'):
+                        obstacle.speed *= 2  # Reset the speed of each obstacle
+
         if self.x < 0:
             self.x = 0
         if self.x + self.width > GameSettings.SCREEN_WIDTH:
@@ -95,11 +102,7 @@ class Balloon(Entity):
         Args:
             surface (pygame.Surface): Game display surface
         """
-
-        #pygame.draw.rect(surface, self.color, (self.x, self.y, self.width, self.height))
         surface.blit(balloon_img, (self.x, self.y))
 
         if self.shield_active:
-            #pygame.draw.rect(surface, (0, 0, 255), (self.x-3, self.y-3, self.width+6, self.height+6), 3)
             surface.blit(balloon_shield_img, (self.x-2, self.y-2))
-

@@ -5,10 +5,6 @@ from core.settings import GameSettings
 from objects.obstacle import *
 from objects.power_up import *
 
-
-# ------------------------------------
-# Obstacle Manager - Factory Method
-# ------------------------------------
 class ObstacleManager:
     """Factory class managing obstacle spawning and lifecycle using Factory Method pattern."""
     def __init__(self):
@@ -32,16 +28,12 @@ class ObstacleManager:
         for obstacle in self.obstacles:
             obstacle.update(dt)
 
-        # Remove obstacles that have moved off the bottom of the screen.
         self.obstacles = [o for o in self.obstacles if o.y <= GameSettings.SCREEN_HEIGHT]
 
     def spawn_obstacle(self):
         """Spawn a randomly chosen obstacle at a random x and y = -50"""
-
         y = -50
         x = random.randint(0, GameSettings.SCREEN_WIDTH - 50)
-
-        # Randomly select an obstacle type.
         if random.choice([True, False]):
             obstacle = Bird(x, y)
         else:
@@ -57,11 +49,6 @@ class ObstacleManager:
         for obstacle in self.obstacles:
             obstacle.draw(surface)
 
-
-
-# ------------------------------------
-# Power Up Manager - Factory Method
-# ------------------------------------
 class PowerUpManager:
     """Factory class managing power-up spawning and lifecycle using Factory Method pattern."""
     def __init__(self):
@@ -85,18 +72,14 @@ class PowerUpManager:
         for powerup in self.powerups:
             powerup.update(dt)
 
-        # Remove power-ups that have moved off the bottom of the screen.
         self.powerups = [p for p in self.powerups if p.y <= GameSettings.SCREEN_HEIGHT]
 
     def spawn_powerup(self):
-        """Spawn a randomly chosen obstacle at a random x and y = -50"""
-
+        """Spawn a randomly chosen power-up at a random x and y = -50"""
         x = random.randint(50, GameSettings.SCREEN_WIDTH - 50)
         y = -50  # spawn just above the screen
-        if random.choice([True, False]):
-            powerup = FuelPowerUp(x, y)
-        else:
-            powerup = ShieldPowerUp(x, y)
+        powerup_type = random.choice([FuelPowerUp, ShieldPowerUp, SlowdownPowerUp])
+        powerup = powerup_type(x, y)
         self.powerups.append(powerup)
 
     def draw(self, surface):
@@ -108,11 +91,6 @@ class PowerUpManager:
         for powerup in self.powerups:
             powerup.draw(surface)
 
-
-
-# ------------------------------------
-# Collision Manager Class - Mediator between balloon, obstacles, and power-ups
-# ------------------------------------
 class CollisionManager:
     """Mediator class handling collision detection between game objects using Mediator pattern."""
     def __init__(self, balloon, obstacle_manager, powerup_manager):
@@ -126,6 +104,7 @@ class CollisionManager:
         self.balloon = balloon
         self.obstacle_manager = obstacle_manager
         self.powerup_manager = powerup_manager
+        self.balloon.obstacle_manager = obstacle_manager  # Pass obstacle_manager to balloon
 
     def check_collisions(self):
         """Check and handle all collisions between:
@@ -133,8 +112,6 @@ class CollisionManager:
         - Balloon and power-ups
         - Applies shield protection or power-up effects as needed.
         """
-
-        # Check collisions with obstacles.
         for obstacle in self.obstacle_manager.obstacles[:]:
             if self.balloon.collides_with(obstacle):
                 if not self.balloon.shield_active:
@@ -143,7 +120,6 @@ class CollisionManager:
                     print("Shield absorbed collision!")
                     self.obstacle_manager.obstacles.remove(obstacle)
 
-        # Check collisions with power-ups.
         for powerup in self.powerup_manager.powerups[:]:
             if self.balloon.collides_with(powerup):
                 self.balloon.apply_powerup(powerup)

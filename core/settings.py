@@ -1,4 +1,3 @@
-
 # ------------------------------
 # Global Settings and Constants
 # ------------------------------
@@ -20,17 +19,24 @@ class GameSettings:
         SHIELD_DURATION (int): Shield power-up duration (milliseconds)
         OBSTACLE_SPAWN_INTERVAL (int): Obstacle spawn interval (milliseconds)
         POWERUP_SPAWN_INTERVAL (int): Power-up spawn interval (milliseconds)
+        SLOWDOWN_DURATION (int): Slowdown power-up duration (milliseconds)
+        SLOWDOWN_OBSTACLE_SPEED (int): Obstacle speed when slowdown power-up is active
+        SLOWDOWN_ACTIVE (bool): Flag to indicate if slowdown is active
     """
     FPS = 60
     SCREEN_WIDTH = 1200
     SCREEN_HEIGHT = 800
     BACKGROUND_SPEED = 150       # pixels per second (scroll speed downward)
     BALLOON_HORIZONTAL_SPEED = 300  # pixels per second horizontally
-    OBSTACLE_SPEED_BIRD = 300      # additional horizontal movement speed for birds
-    OBSTACLE_SPEED_CLOUD = 200      # additional horizontal movement speed for clouds
-    FUEL_CONSUMPTION_RATE = 1     # fuel units per second
+    OBSTACLE_SPEED = 200         # default obstacle speed
+    DEFAULT_OBSTACLE_SPEED = 200 # default obstacle speed
+    OBSTACLE_SPEED_BIRD = 300    # additional horizontal movement speed for birds
+    OBSTACLE_SPEED_CLOUD = 200   # additional horizontal movement speed for clouds
+    FUEL_CONSUMPTION_RATE = 1    # fuel units per second
     FUEL_MAX_FILL = 100
     FUEL_POWER_UP = 20
-    SHIELD_DURATION = 6000         # milliseconds the shield lasts
+    SHIELD_DURATION = 6000       # milliseconds the shield lasts
     OBSTACLE_SPAWN_INTERVAL = 2000 # milliseconds
     POWERUP_SPAWN_INTERVAL = 7000  # milliseconds
+    SLOWDOWN_DURATION = 4000     # milliseconds the slowdown lasts
+    SLOWDOWN_ACTIVE = False      # Add this flag to track slowdown state

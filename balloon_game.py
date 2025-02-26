@@ -1,7 +1,11 @@
 import pygame
 import random
 import sys
+import os  # Ensure os is imported
 from pygame.locals import *
+
+# Set the working directory to the script's directory
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 from core.settings import GameSettings
 from core.entity import Entity
@@ -10,12 +14,9 @@ from objects.obstacle import *
 from objects.power_up import *
 from core.game_managers import *
 
-
-# ---------------------------
-# Main Game Class
-# ---------------------------
 class GameLoop:
     """Main game controller class managing the game lifecycle and subsystems."""
+    
     def __init__(self):
         """Initialize game systems including:
         - Pygame window
@@ -26,6 +27,7 @@ class GameLoop:
         self.screen = pygame.display.set_mode((GameSettings.SCREEN_WIDTH, GameSettings.SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.font = pygame.font.SysFont(None, 24)
+        self.slowdown_font = pygame.font.SysFont(None, 48)  # Font for slowdown text
         pygame.display.set_caption("Balloon Game")
 
         self.balloon = Balloon()
@@ -35,8 +37,19 @@ class GameLoop:
 
         self.running = True
         self.current_height = 0
-        self.highest_height = 0
+        self.highest_height = self.load_highest_height()
 
+    def load_highest_height(self):
+        """Load the highest height from a file."""
+        if os.path.exists("highest_height.txt"):
+            with open("highest_height.txt", "r") as file:
+                return float(file.read())
+        return 0
+
+    def save_highest_height(self):
+        """Save the highest height to a file."""
+        with open("highest_height.txt", "w") as file:
+            file.write(str(self.highest_height))
 
     def handle_input(self, dt):
         """Process user input for balloon movement and game control.
@@ -52,7 +65,6 @@ class GameLoop:
             self.balloon.move_left(dt)
         if keys[K_d] or keys[K_RIGHT]:
             self.balloon.move_right(dt)
-
 
     def update(self, dt):
         """Update all game systems:
@@ -70,15 +82,12 @@ class GameLoop:
         self.powerup_manager.update(dt)
         self.collision_manager.check_collisions()
 
-        # Increase current height based on background scroll.
         self.current_height += GameSettings.BACKGROUND_SPEED * dt
         if self.current_height > self.highest_height:
             self.highest_height = self.current_height
 
-        # End the game if the balloon has crashed.
         if self.balloon.has_crashed():
             self.running = False
-
 
     def render(self):
         """Render all game elements:
@@ -86,16 +95,19 @@ class GameLoop:
         - Game objects
         - HUD (heights, fuel, shield)
         """
-
-        # Fill with a sky-blue color.
         self.screen.fill((135, 206, 235))
 
-        # Draw all game objects.
         self.balloon.draw(self.screen)
         self.obstacle_manager.draw(self.screen)
         self.powerup_manager.draw(self.screen)
 
-        # Draw HUD (heights, fuel and shield).
+        self.draw_hud()
+        self.draw_slowdown_text()  # Draw slowdown text if active
+
+        pygame.display.flip()
+
+    def draw_hud(self):
+        """Draw the HUD elements on the screen."""
         height_text = self.font.render(f"Current Height: {int(self.current_height/10)}m", True, (0, 0, 0))
         best_text = self.font.render(f"Highest Height: {int(self.highest_height/10)}m", True, (0, 0, 0))
         fuel_text = self.font.render(f"Fuel: {int(self.balloon.fuel)}", True, (0, 0, 0))
@@ -105,8 +117,12 @@ class GameLoop:
         self.screen.blit(fuel_text, (10, 50))
         self.screen.blit(shield_text, (10, 70))
 
-        pygame.display.flip()
-
+    def draw_slowdown_text(self):
+        """Draw the slowdown text in the middle of the screen if slowdown is active."""
+        if self.balloon.slowdown_active:
+            slowdown_text = self.slowdown_font.render(f"Slow Motion: {int(self.balloon.slowdown_timer / 1000)}s", True, (255, 0, 0))
+            text_rect = slowdown_text.get_rect(center=(GameSettings.SCREEN_WIDTH // 2, GameSettings.SCREEN_HEIGHT // 2))
+            self.screen.blit(slowdown_text, text_rect)
 
     def run(self):
         """Execute main game loop with fixed FPS timing."""
@@ -117,7 +133,6 @@ class GameLoop:
             self.render()
         self.game_over()
 
-
     def game_over(self):
         """Handle game termination sequence including:
         - Displaying game over screen
@@ -126,18 +141,38 @@ class GameLoop:
         """
         print("Game Over!")
         self.screen.fill((0, 0, 0))
-        over_text = self.font.render("Game Over! Press any key to exit.", True, (255, 255, 255))
+        over_text = self.font.render("Game Over! Press R to restart or Q to quit.", True, (255, 255, 255))
         self.screen.blit(over_text, (GameSettings.SCREEN_WIDTH // 2 - 150, GameSettings.SCREEN_HEIGHT // 2))
         pygame.display.flip()
+        self.wait_for_input()
+
+    def wait_for_input(self):
+        """Wait for user input to restart or quit the game."""
         waiting = True
         while waiting:
             for event in pygame.event.get():
-                if event.type in (QUIT, KEYDOWN):
+                if event.type == QUIT:
                     waiting = False
+                    self.running = False
+                elif event.type == KEYDOWN:
+                    if event.key == K_r:
+                        self.reset_game()  # Reset the game state
+                        self.run()
+                    elif event.key == K_q:
+                        waiting = False
+                        self.running = False
+        self.save_highest_height()
         pygame.quit()
         sys.exit()
 
-
+    def reset_game(self):
+        """Reset the game state to start a new game."""
+        self.current_height = 0
+        self.balloon = Balloon()
+        self.obstacle_manager = ObstacleManager()
+        self.powerup_manager = PowerUpManager()
+        self.collision_manager = CollisionManager(self.balloon, self.obstacle_manager, self.powerup_manager)
+        self.running = True
 
 if __name__ == "__main__":
     game = GameLoop()
